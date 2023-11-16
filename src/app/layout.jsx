@@ -13,7 +13,7 @@ export const fontSans = FontSans({
 });
 export const metadata = {
   title: "FakeIds",
-  description: "FakeIds App",
+  description: "The best fake USA ID",
 };
 
 export default function RootLayout({ children }) {
