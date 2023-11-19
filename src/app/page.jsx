@@ -1,7 +1,5 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -10,16 +8,15 @@ import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { BoxModelIcon } from "@radix-ui/react-icons";
 import SectionHero2 from "@/components/SectionHero/SectionHero2";
 import SectionSliderProductCard from "@/components/SectionSliderProductCard";
 import Features from "@/components/Features";
+import FeedbackSlider from "@/components/FeedbackSlider";
 
 const formSchema = z.object({
   email: z.string().email("Please enter the correct email address"),
@@ -64,7 +61,8 @@ export default function Home() {
           <h6 className={"ml-2"}>What we offer</h6>
         </div>
         <SectionSliderProductCard className={"container"} />
-        <Features className={""} />
+        <Features />
+        <FeedbackSlider className={"bg-[#222] opacity-70"} />
         <div className="container py-16 flex flex-col gap-10 lg:gap-28 lg:flex-row lg:justify-between">
           <div className="flex flex-col">
             <h3 className={"uppercase font-semibold mb-2"}>

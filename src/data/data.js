@@ -13,7 +13,33 @@ import productSport5 from "@/images/products/sport-5.png";
 import productSport6 from "@/images/products/sport-6.png";
 import productSport7 from "@/images/products/sport-7.png";
 import productSport8 from "@/images/products/sport-8.png";
-import { StaticImageData } from "next/image";
+
+export const FEEDBACKS = [
+  {
+    id: 1,
+    avatar: "https://avatars.githubusercontent.com/u/124599?v=4",
+    content:
+      "Thanks for such a fantastic service. The fake ID is of excellent quality, and I have used it a couple of times without any problems. I invested in a group discount, and even my friends were happy. I would repurchase it when I need another one. Even the response is fast via email. Can recommend FakeIDs at any time. ",
+    username: "A happy customer",
+    description: "Name not revealed for protection",
+  },
+  {
+    id: 2,
+    avatar: "https://avatars.githubusercontent.com/u/124599?v=4",
+    content:
+      "Super friendly team that answered all my questions as I was concerned I would be wasting my money. The response is fast, and the ID cards look so real. Have used it a few times and have gotten in without any concerns. Super satisfied with the service. While I had to wait a bit longer, it was still worth the wait. ",
+    username: "A happy customer",
+    description: "Name not revealed for protection",
+  },
+  {
+    id: 3,
+    avatar: "https://avatars.githubusercontent.com/u/124599?v=4",
+    content:
+      "Nice ID, guys, and very happy with the results. The cards even look better than the ones displayed on the site. It feels top-notch, and I have done the bend test and checked the security measures as it needs to be before using it. Thanks for the advice on how I should use my card as well. As it worked out fine when visiting a club in town. In honesty, I tried another vendor, but this one is the best you can buy online. ",
+    username: "A happy customer",
+    description: "Name not revealed for protection",
+  },
+];
 
 const DEMO_VARIANTS = [
   {
