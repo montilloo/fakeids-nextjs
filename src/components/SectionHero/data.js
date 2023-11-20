@@ -1,28 +1,30 @@
-import Image, { StaticImageData } from "next/image";
-import imageRightPng from "@/images/hero-right.png";
-import imageRightPng2 from "@/images/hero-right-2.png";
-import imageRightPng3 from "@/images/hero-right-3.png";
+import getYourFakeID from "@/images/get-your-fake-ID.jpg";
+import provenExperience from "@/images/proven-experience.jpg";
+import privacyPolicy from "@/images/privacy-policy.jpg";
 
-export const HERO2_DEMO_DATA = [
+export const HERO_DATA = [
   {
-    image: imageRightPng2,
-    heading: "Exclusive collection for everyone",
-    subHeading: "In this season, find the best 🔥",
-    btnText: "Explore now",
+    image: provenExperience,
+    heading: "Get Your Fake ID",
+    subHeading:
+      "Get Your Fake ID and without feeling bothered. We provide premium scannable fake ID cards that would work anywhere in the world.",
+    btnText: "See our products",
     btnLink: "/",
   },
   {
-    image: imageRightPng3,
-    heading: "Exclusive collection for everyone",
-    subHeading: "In this season, find the best 🔥",
-    btnText: "Explore now",
+    image: privacyPolicy,
+    heading: "Proven Experience",
+    subHeading:
+      "We have almost 10 years’ experience in this field and we guaranty your safety as it regards transactions, identity, and ID means. We have proven track records, and know what works. ",
+    btnText: "Browse our products",
     btnLink: "/",
   },
   {
-    image: imageRightPng,
-    heading: "Exclusive collection for everyone",
-    subHeading: "In this season, find the best 🔥",
-    btnText: "Explore now",
+    image: getYourFakeID,
+    heading: "Privacy Policy",
+    subHeading:
+      "We do not hold or withhold any information submitted to our site. All data are permanently deleted when the real IDs have been successfully shipped to the customer. Hence, we are not able to reproduce the information if you or anyone ask us for such data. ",
+    btnText: "Order your ID",
     btnLink: "/",
   },
 ];
