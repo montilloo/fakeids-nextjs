@@ -14,6 +14,66 @@ import productSport6 from "@/images/products/sport-6.png";
 import productSport7 from "@/images/products/sport-7.png";
 import productSport8 from "@/images/products/sport-8.png";
 
+export const FAQS = [
+  {
+    id: 1,
+    trigger: "Are these IDs Scannable?",
+    content:
+      "Yes they can be scanned and they will show all information that is on the card in the proper format.",
+  },
+  {
+    id: 2,
+    trigger: "Can I Purchase Only 1 ID ?",
+    content:
+      "We don’t sell only 1 id. The reason we provide two SAME IDs for each person is that if you lose one, you don’t have to pay for another.",
+  },
+  {
+    id: 3,
+    trigger: "How To Take a Good Photo?",
+    content:
+      "NO PASSPORT PHOTO\n" +
+      "NO SELFIES PHOTO\n" +
+      "NO SHADOWS ON FACE\n" +
+      "HIGH-RESOLUTION PHOTO\n" +
+      "WHITE OR LIGHT COLORED BACKGROUND\n" +
+      "LOOKING DIRECTLY AT THE CAMERA\n",
+  },
+  {
+    id: 4,
+    trigger: "How do you ship the IDs?",
+    content:
+      "We have several different methods for shipping, including but not limited to: USPS, Fedex, UPS and DHL",
+  },
+  {
+    id: 5,
+    trigger: "I ordered my ID and sent my information in, now what?",
+    content:
+      "Now, you wait for us to get back to you and process your order. As soon as were done, we will ship it.",
+  },
+  {
+    id: 6,
+    trigger: "Black light and UV?",
+    content:
+      "Yes, all IDs come with UV ink on them, and will shine under a black light.",
+  },
+  {
+    id: 7,
+    trigger: "Can I Purchase Only 1 ID ?",
+    content:
+      "We don’t sell only 1 id. The reason we provide two SAME IDs for each person is that if you lose one, you don’t have to pay for another.",
+  },
+  {
+    id: 8,
+    trigger: "Is It Possible To Choose A Custom Address For My ID?",
+    content:
+      "We will choose the Id's address for customers. It is a real address, but a random one. If you want your own ID address, you can mention it in the extra info box.",
+  },
+  {
+    id: 9,
+    trigger: "I received my ID, what should I do now?",
+    content: "Use it for whatever your heart desires.",
+  },
+];
 export const FEEDBACKS = [
   {
     id: 1,

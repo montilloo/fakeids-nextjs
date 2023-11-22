@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
-import { MapPin } from "lucide-react";
 import VisaPng from "public/visa.png";
 import Visa2Png from "public/visa2.png";
 import ExpressCardPng from "public/expresscard.png";
@@ -41,10 +40,6 @@ export function Footer() {
           {/* Footer Section 4 */}
           <div>
             <h5 className="font-bold text-lg mb-2">CONTACT US</h5>
-            <p className="inline-flex items-center mb-1 text-gray-500">
-              <MapPin className={"w-4 h-4 mr-2 text-gray-500"} />
-              Location: China
-            </p>
             <p className="inline-flex items-center mb-1 text-gray-500">
               <EnvelopeClosedIcon className={"mr-2"} />
               Email Us: order@usafakeid.com

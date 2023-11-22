@@ -46,8 +46,8 @@ const Order = () => {
     console.log(values);
   }
   return (
-    <div className={"container min-h-screen "}>
-      <div className="max-w-2xl">
+    <div className={"container flex justify-center min-h-screen"}>
+      <div className="mx-auto">
         <Form {...form}>
           <form className={"space-y-4"} onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
