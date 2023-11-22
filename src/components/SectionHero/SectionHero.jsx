@@ -16,12 +16,12 @@ const SectionHero = ({ className = "" }) => {
   const [indexActive, setIndexActive] = useState(0);
   const [isRunning, toggleIsRunning] = useBoolean(true);
 
-  useInterval(
+  /*  useInterval(
     () => {
       handleAutoNext();
     },
     isRunning ? 5500 : null,
-  );
+  );*/
   //
 
   const handleAutoNext = () => {
@@ -71,10 +71,16 @@ const SectionHero = ({ className = "" }) => {
       return null;
     }
     return (
-      <div
-        className={`nc-SectionHero2Item nc-SectionHero2Item--animation flex flex-col-reverse lg:flex-col relative overflow-hidden ${className}`}
-        key={index}
-      >
+      <div className={`flex relative overflow-hidden ${className}`} key={index}>
+        <div className="absolute left-0 bottom-0 top-0 w-full">
+          <Image
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="w-full h-full object-cover nc-SectionHero2Item__image"
+            src={item.image}
+            alt={item.heading}
+          />
+        </div>
         <div className="absolute bottom-4 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 z-20 flex justify-center">
           {DATA.map((_, index) => {
             const isActive = indexActive === index;
@@ -116,23 +122,11 @@ const SectionHero = ({ className = "" }) => {
           onClickNext={handleClickNext}
         />
 
-        {/* BG */}
-        <div className="mt-10 lg:mt-0 lg:absolute end-0 rtl:-end-28 bottom-0 top-0 w-full max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
-          <Image
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="w-full h-full object-contain object-right-bottom nc-SectionHero2Item__image"
-            src={item.image}
-            alt={item.heading}
-            priority
-          />
-        </div>
-
-        <div className="relative container pb-0 pt-14 sm:pt-20 lg:py-44">
+        <div className="relative container pb-0 pt-14 lg:py-44">
           <div
             className={`relative z-[1] w-full max-w-3xl space-y-8 sm:space-y-14 nc-SectionHero2Item__left`}
           >
-            <div className="space-y-5 sm:space-y-6">
+            <div className="h-48 space-y-5 sm:space-y-6">
               <span className="nc-SectionHero2Item__subheading block text-base md:text-xl text-slate-700 font-medium bg-white">
                 {item.subHeading}
               </span>
@@ -142,7 +136,7 @@ const SectionHero = ({ className = "" }) => {
             </div>
 
             <Button
-              className="nc-SectionHero2Item__button dark:bg-slate-900 uppercase rounded-none hover:text-foreground hover:bg-transparent"
+              className="nc-SectionHero2Item__button dark:bg-slate-900 uppercase rounded-none hover:text-white hover:bg-transparent hover:border"
               href={item.btnLink}
             >
               <span>{item.btnText}</span>
