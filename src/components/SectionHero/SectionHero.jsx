@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import backgroundLineSvg from "@/images/Moon.svg";
 import { Button } from "@/components/ui/button";
 import Next from "@/shared/NextPrev/Next";
 import Prev from "@/shared/NextPrev/Prev";
