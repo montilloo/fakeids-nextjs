@@ -35,7 +35,7 @@ export default function Home() {
           <BoxModelIcon />
           <h6 className={"ml-2"}>Latest Products</h6>
         </div>
-        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
+        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mb-10">
           {LATESTPRODUCTS.map((product) => (
             <KeyRecommend product={product} key={product.id} />
           ))}
