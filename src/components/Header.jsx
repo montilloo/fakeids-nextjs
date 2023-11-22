@@ -29,7 +29,7 @@ export function Header() {
         <div className="container relative z-50 flex justify-between py-2">
           <div className="relative z-10 flex items-center gap-16">
             <Link href="/" aria-label="Home">
-              FakeIds
+              USAFakeID
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />

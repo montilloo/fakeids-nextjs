@@ -12,7 +12,7 @@ export const fontSans = FontSans({
   variable: "--font-sans",
 });
 export const metadata = {
-  title: "FakeIds",
+  title: "usa fake id",
   description: "The best fake USA ID",
 };
 

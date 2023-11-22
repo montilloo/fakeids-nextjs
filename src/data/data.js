@@ -19,7 +19,7 @@ export const FEEDBACKS = [
     id: 1,
     avatar: "https://avatars.githubusercontent.com/u/124599?v=4",
     content:
-      "Thanks for such a fantastic service. The fake ID is of excellent quality, and I have used it a couple of times without any problems. I invested in a group discount, and even my friends were happy. I would repurchase it when I need another one. Even the response is fast via email. Can recommend FakeIDs at any time. ",
+      "Thanks for such a fantastic service. The fake ID is of excellent quality, and I have used it a couple of times without any problems. I invested in a group discount, and even my friends were happy. I would repurchase it when I need another one. Even the response is fast via email. Can recommend USAFakeID at any time. ",
     username: "A happy customer",
     description: "Name not revealed for protection",
   },
@@ -135,7 +135,7 @@ export const OFFERS = [
     id: 4,
     title: "The Fastest Discrete Shipping",
     description:
-      "There are no long waiting times or delays! FakeIDs knows how eager you are to get to that fun party. So we will never make you wait. We produce and ship your IDs as soon as they are ready with our streamlined process. So all you need to do is make payment and sit back as your ID should be there as quickly as possible.",
+      "There are no long waiting times or delays! USAFakeID knows how eager you are to get to that fun party. So we will never make you wait. We produce and ship your IDs as soon as they are ready with our streamlined process. So all you need to do is make payment and sit back as your ID should be there as quickly as possible.",
     image: whatWeOffer[3],
     tag: "Marketing",
   },

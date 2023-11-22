@@ -15,9 +15,9 @@ export function Footer() {
         <div className="container mx-auto grid lg:grid-cols-4 grid-cols-1 gap-4">
           {/* Footer Section 1 */}
           <div>
-            <h5 className="font-bold text-lg mb-2">FakeIDs</h5>
+            <h5 className="font-bold text-lg mb-2">USAFakeID</h5>
             <p className="mb-1 text-gray-500">
-              fakeids.com is an online fake id website dedicated to providing
+              usafakeid.com is an online fake id website dedicated to providing
               quality official documents like identity cards to individuals
               across the globe but mostly in the United States.
             </p>
@@ -47,7 +47,7 @@ export function Footer() {
             </p>
             <p className="inline-flex items-center mb-1 text-gray-500">
               <EnvelopeClosedIcon className={"mr-2"} />
-              Email Us: order@fakeids.com
+              Email Us: order@usafakeid.com
             </p>
           </div>
         </div>
@@ -59,7 +59,7 @@ export function Footer() {
           }
         >
           <p className={"text-sm leading-relaxed mt-2 text-gray-500 md:mt-0"}>
-            &copy;Copyright {new Date().getFullYear()} FakeIDs. All Rights
+            &copy;Copyright {new Date().getFullYear()} USAFakeID. All Rights
             Reserved.
           </p>
           <ul className={"flex mt-2"}>

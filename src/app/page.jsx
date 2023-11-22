@@ -14,14 +14,14 @@ export default function Home() {
       <div className={" container w-full  py-16"}>
         <div className="bg-[#F8F8F8] flex items-center justify-center font-semibold p-4 mb-10">
           <BoxModelIcon />
-          <h6 className={"ml-2"}>Why Choose FakeIDs</h6>
+          <h6 className={"ml-2"}>Why Choose USAFakeID</h6>
         </div>
         <p className="text-foreground">
-          FakeIDs is your trusted fake store providing you with premium quality
-          fake IDs. We pride ourselves in our work as we have two incredible
-          teams available at your service. One group makes the IDs, and the
-          other checks the quality control before shipping. As a result, our
-          efficiency and speed are way faster. In addition, we have trained
+          USAFakeID is your trusted fake store providing you with premium
+          quality fake IDs. We pride ourselves in our work as we have two
+          incredible teams available at your service. One group makes the IDs,
+          and the other checks the quality control before shipping. As a result,
+          our efficiency and speed are way faster. In addition, we have trained
           professionals with a streamlined process to cater for many fakes as
           possible.
         </p>

@@ -11,7 +11,7 @@ const PageForgotPass = ({}) => {
           Forgot password
         </h2>
         <span className="block text-sm mt-4 text-neutral-700 sm:text-base dark:text-neutral-200">
-          Welcome to FakeIds
+          Welcome to USAFakeID
         </span>
       </header>
 
