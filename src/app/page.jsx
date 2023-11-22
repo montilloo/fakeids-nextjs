@@ -1,12 +1,10 @@
 "use client";
 
 import { BoxModelIcon } from "@radix-ui/react-icons";
-import { OFFERS } from "@/data/data";
+import { OFFERS, LATESTPRODUCTS } from "@/data/data";
 import SectionHero from "@/components/SectionHero/SectionHero";
 import SectionSliderProductCard from "@/components/SectionSliderProductCard";
-import Features from "@/components/Features";
-import FeedbackSlider from "@/components/FeedbackSlider";
-import Subscribe from "@/components/Subscribe";
+import KeyRecommend from "@/components/KeyRecommend";
 
 export default function Home() {
   return (
@@ -33,9 +31,15 @@ export default function Home() {
           <h6 className={"ml-2"}>What we offer</h6>
         </div>
         <SectionSliderProductCard className={"container"} data={OFFERS} />
-        <Features />
-        <FeedbackSlider className={"bg-[#222] opacity-70"} />
-        <Subscribe />
+        <div className="container bg-[#F8F8F8] flex items-center justify-center font-semibold p-4 mb-10">
+          <BoxModelIcon />
+          <h6 className={"ml-2"}>Latest Products</h6>
+        </div>
+        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
+          {LATESTPRODUCTS.map((product) => (
+            <KeyRecommend product={product} key={product.id} />
+          ))}
+        </div>
       </div>
     </main>
   );

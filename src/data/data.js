@@ -1,6 +1,7 @@
 import getYourFakeID from "@/images/get-your-fake-ID.jpg";
 import provenExperience from "@/images/proven-experience.jpg";
 import privacyPolicy from "@/images/privacy-policy.jpg";
+import Georgia from "@/images/latest-georgia.JPG";
 
 export const FAQS = [
   {
@@ -113,5 +114,44 @@ export const OFFERS = [
       "Most importantly, you should know that when your requested order has reached you, “you were never here.",
     image: privacyPolicy,
     tag: "Sell",
+  },
+];
+
+export const LATESTPRODUCTS = [
+  {
+    id: 1,
+    name: "Georgia",
+    image: Georgia,
+    rate: 5,
+  },
+  {
+    id: 2,
+    name: "Georgia",
+    image: Georgia,
+    rate: 5,
+  },
+  {
+    id: 3,
+    name: "Georgia",
+    image: Georgia,
+    rate: 5,
+  },
+  {
+    id: 4,
+    name: "Georgia",
+    image: Georgia,
+    rate: 5,
+  },
+  {
+    id: 5,
+    name: "Georgia",
+    image: Georgia,
+    rate: 5,
+  },
+  {
+    id: 6,
+    name: "Georgia",
+    image: Georgia,
+    rate: 5,
   },
 ];
