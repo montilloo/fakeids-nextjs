@@ -1,6 +1,7 @@
 "use client";
 
 import { BoxModelIcon } from "@radix-ui/react-icons";
+import { OFFERS } from "@/data/data";
 import SectionHero from "@/components/SectionHero/SectionHero";
 import SectionSliderProductCard from "@/components/SectionSliderProductCard";
 import Features from "@/components/Features";
@@ -31,7 +32,7 @@ export default function Home() {
           <BoxModelIcon />
           <h6 className={"ml-2"}>What we offer</h6>
         </div>
-        <SectionSliderProductCard className={"container"} />
+        <SectionSliderProductCard className={"container"} data={OFFERS} />
         <Features />
         <FeedbackSlider className={"bg-[#222] opacity-70"} />
         <Subscribe />

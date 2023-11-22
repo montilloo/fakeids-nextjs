@@ -1,7 +1,3 @@
-import security from "@/images/security.jpg";
-import shipping from "@/images/shipping.jpg";
-import usFlag from "@/images/us-flag.jpg";
-import passport from "@/images/passport.jpg";
 import avatar1 from "@/images/avatars/Image-1.png";
 import avatar2 from "@/images/avatars/Image-2.png";
 import avatar3 from "@/images/avatars/Image-3.png";
@@ -37,9 +33,7 @@ import product21 from "@/images/products/21.png";
 import product22 from "@/images/products/22.png";
 import product23 from "@/images/products/23.png";
 import product24 from "@/images/products/24.png";
-//
 
-export const whatWeOffer = [security, shipping, usFlag, passport];
 export const productImgs = [
   product1,
   product2,
