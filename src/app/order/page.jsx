@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,7 +32,7 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
-const eyesEnum = [
+const eyesEnum = z.enum([
   "Black",
   "Brown",
   "Blue",
@@ -40,21 +42,32 @@ const eyesEnum = [
   "Maroon",
   "Pink",
   "Multicolor",
-];
+]);
+const hairEnum = z.enum([
+  "Bald",
+  "Black",
+  "Blonde",
+  "Brown",
+  "Gray",
+  "Red",
+  "Sandy",
+  "White",
+]);
 const formSchema = z.object({
   state: z.string({
     required_error: "Please select a state",
   }),
   firstname: z
     .string({
-      required_error: "Please fill in firstname",
+      required_error: "Please enter firstname",
       invalid_type_error: "invalid value",
     })
     .min(2)
     .max(50),
   lastname: z
     .string({
-      required_error: "Please fill in lastname",
+      required_error: "Please enter lastname",
+      invalid_type_error: "invalid value",
     })
     .min(2)
     .max(50),
@@ -62,51 +75,64 @@ const formSchema = z.object({
     required_error: "Please select a date and time",
     invalid_type_error: "That's not a date!",
   }),
-  heightFeet: z
-    .number({
-      required_error: "Please fill in height feet",
-    })
-    .positive()
-    .transform((value) => Number(value)),
-  heightInches: z
-    .number({
-      required_error: "Please fill in heightInches",
-    })
-    .positive(),
-  weight: z
-    .number({
-      required_error: "Please fill in weight",
-    })
-    .positive(),
-  // eyes: eyesEnum,
-  // hair: z.enum([
-  //   "Bald",
-  //   "Black",
-  //   "Blonde",
-  //   "Brown",
-  //   "Gray",
-  //   "Red",
-  //   "Sandy",
-  //   "White",
-  // ]),
-  // gender: z.enum(["male", "female"]),
+  heightFeet: z.string({
+    required_error: "Please enter height feet",
+    invalid_type_error: "invalid value",
+  }),
+  heightInches: z.string({
+    required_error: "Please enter heightInches",
+    invalid_type_error: "invalid value",
+  }),
+  weight: z.string({
+    required_error: "Please enter weight",
+    invalid_type_error: "invalid value",
+  }),
+  eyes: eyesEnum,
+  hair: hairEnum,
+  gender: z.enum(["Male", "Female"]),
+  dln: z.string({
+    required_error: "Please enter dln.",
+    invalid_type_error: "invalid value",
+  }),
+  city: z.string({
+    required_error: "Please enter city.",
+    invalid_type_error: "invalid value",
+  }),
 });
 const Order = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      state: "",
       firstname: "",
       middlename: "",
       lastname: "",
-      heightFeet: 0,
-      heightInches: 0,
-      weight: 0,
+      heightFeet: "",
+      heightInches: "",
+      weight: "",
+      dln: "",
+      city: "",
+      zip: "",
     },
   });
 
-  const onSubmit = (values) => {
-    console.log(values);
+  const router = useRouter();
+
+  const handleAddAnother = () => {
+    const { data, success } = formSchema.safeParse(form.getValues());
+    if (!success) {
+      return;
+    }
+    // TODO: 提交一下当前已经填写的
+    form.reset();
   };
+
+  const onSubmit = (values) => {
+    // console.log(form.getValues(), "getValues onSubmit");
+    console.log(values, "onSubmit values");
+    router.push("/order/checkout");
+  };
+
   return (
     <div className={"container flex justify-center min-h-screen"}>
       <div className="mx-auto">
@@ -138,7 +164,7 @@ const Order = () => {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Please select a state" />
+                        <SelectValue placeholder={"Please select a state"} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -194,7 +220,7 @@ const Order = () => {
                 <FormItem>
                   <FormLabel>First name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Please fill in first name" {...field} />
+                    <Input placeholder="Please enter first name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -224,7 +250,7 @@ const Order = () => {
                 <FormItem>
                   <FormLabel>Last name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Please fill in lastname." {...field} />
+                    <Input placeholder="Please enter lastname." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -282,11 +308,7 @@ const Order = () => {
                 <FormItem>
                   <FormLabel>Height feet</FormLabel>
                   <FormControl>
-                    <Input
-                      type="number"
-                      placeholder="Please fill in height feet."
-                      {...field}
-                    />
+                    <Input placeholder="Please enter height feet." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -301,7 +323,7 @@ const Order = () => {
                 <FormItem>
                   <FormLabel>Height inches</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="" {...field} />
+                    <Input placeholder="Please enter heightInches" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -316,7 +338,7 @@ const Order = () => {
                 <FormItem>
                   <FormLabel>Weight</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="" {...field} />
+                    <Input placeholder="Please enter weight" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -324,7 +346,7 @@ const Order = () => {
             />
 
             {/* ===	Eyes === */}
-            {/*<FormField
+            <FormField
               control={form.control}
               name="eyes"
               render={({ field }) => (
@@ -336,7 +358,7 @@ const Order = () => {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="" />
+                        <SelectValue placeholder="Please select eyes color." />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -354,10 +376,10 @@ const Order = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/* ===	Hair === */}
-            {/*<FormField
+            <FormField
               control={form.control}
               name="hair"
               render={({ field }) => (
@@ -369,7 +391,7 @@ const Order = () => {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="" />
+                        <SelectValue placeholder="Please select hair color." />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -386,10 +408,10 @@ const Order = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/*	=== Gender === */}
-            {/*<FormField
+            <FormField
               control={form.control}
               name="gender"
               render={({ field }) => (
@@ -412,25 +434,25 @@ const Order = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/* ===	DLN ===*/}
-            {/*<FormField
+            <FormField
               control={form.control}
               name="dln"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>DLN</FormLabel>
                   <FormControl>
-                    <Input placeholder="Optional" {...field} />
+                    <Input placeholder="Please enter DLN." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/*	=== Address === */}
-            {/*<FormField
+            <FormField
               control={form.control}
               name={"address"}
               render={({ fields }) => (
@@ -445,24 +467,27 @@ const Order = () => {
                   </FormControl>
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/*	===City===*/}
-            {/*<FormField
+            <FormField
               control={form.control}
               name={"city"}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>City</FormLabel>
                   <FormControl>
-                    <Input placeholder={""} {...field}></Input>
+                    <Input
+                      placeholder={"Please enter city."}
+                      {...field}
+                    ></Input>
                   </FormControl>
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/*	===Zip===*/}
-            {/*<FormField
+            <FormField
               control={form.control}
               name={"zip"}
               render={({ field }) => (
@@ -473,7 +498,7 @@ const Order = () => {
                   </FormControl>
                 </FormItem>
               )}
-            />*/}
+            />
 
             {/*===Picture===*/}
             {/*<FormField
@@ -511,12 +536,11 @@ const Order = () => {
               )}
             />*/}
             <div className={"space-x-2"}>
-              {/*              <Button type="submit" variant={"secondary"}>
+              <Button variant={"secondary"} onClick={handleAddAnother}>
                 ADD and add another
-              </Button>*/}
+              </Button>
               <Button type="submit">ADD and checkout</Button>
-              <p className={"text-sm text-neutral-400 mt-4"}>
-                {" "}
+              <p className={"text-sm text-neutral-500 mt-4"}>
                 Please contact us for help if you have any questions in taking
                 your order: order@usafakeid.com
               </p>
