@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import * as z from "zod";
@@ -90,10 +90,6 @@ const formSchema = z.object({
   eyes: eyesEnum,
   hair: hairEnum,
   gender: z.enum(["Male", "Female"]),
-  dln: z.string({
-    required_error: "Please enter dln.",
-    invalid_type_error: "invalid value",
-  }),
   city: z.string({
     required_error: "Please enter city.",
     invalid_type_error: "invalid value",
